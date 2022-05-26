@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lesson"
+            type="online.javalab.poly.model.lesson.Lesson" />
+
+        <variable
+            name="buttonTitle"
+            type="String" />
+
+        <variable
+            name="complete"
+            type="Integer" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/custom_background_item_primary_enabled_1"
+        android:padding="@dimen/dp_10"
+        tools:targetApi="lollipop">
+
+        <TextView
+            android:id="@+id/tv_lesson_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@{lesson.title}"
+            android:textColor="@color/material_500"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_expand_collapse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_expand_collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_arrow_down_gray_24"
+            app:imageRes="@{lesson.expand}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_lesson_total_topics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center_vertical"
+            android:text="@{lesson.totalTopic +` topics`}"
+            android:textColor="@color/m_gray_200"
+            app:drawableLeftCompat="@drawable/ic_hashtag_topic_svg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lesson_title" />
+
+        <TextView
+            android:id="@+id/tv_lesson_total_learner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center_vertical"
+            android:text="@{lesson.learnCount +` learner`}"
+            android:textColor="@color/m_gray_200"
+            app:drawableLeftCompat="@drawable/ic_eye_viewer_svg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lesson_total_topics" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vg_lesson_sub_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:visibility="@{lesson.expand? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lesson_total_learner"
+            tools:layout_editor_absoluteX="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_lesson_sub_topics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_10"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="-32dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ic_label_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:backgroundTint="@color/gray"
+                app:cardCornerRadius="@dimen/dp_6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcv_lesson_sub_topics">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_6"
+                    android:src="@drawable/ic_sand_clock_svg" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_label_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_6"
+                android:text="@string/text_label_progress"
+                android:textColor="@color/material_500"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ic_label_progress"
+                app:layout_constraintTop_toTopOf="@+id/ic_label_progress" />
+
+            <TextView
+                android:id="@+id/tv_lesson_completed_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_6"
+                android:text="@{ complete+`/`+lesson.totalTopic}"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/ic_label_progress"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_completed" />
+
+            <ProgressBar
+                android:id="@+id/progress_lesson_completed"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:progressDrawable="@drawable/custom_progress"
+                app:completed="@{complete==null?0:complete}"
+                app:layout_constraintTop_toBottomOf="@+id/ic_label_progress"
+                app:totalTopics="@{lesson.totalTopic}" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_lesson_start"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@drawable/custom_button_enabled"
+                android:gravity="center"
+                android:minWidth="180dp"
+                android:text="@{buttonTitle!=null? buttonTitle :`GET STARTED`}"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_lesson_completed" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

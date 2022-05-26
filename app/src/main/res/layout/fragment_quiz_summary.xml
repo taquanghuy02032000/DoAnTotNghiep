@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mark"
+            type="Integer" />
+
+        <variable
+            name="message"
+            type="String" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/dp_16"
+        tools:context=".fragments.lesson.QuizSummaryFragment">
+
+
+        <TextView
+            android:id="@+id/tv_sum_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:gravity="center"
+            android:text="Finish the test"
+            android:textColor="@color/material_500"
+            android:textSize="@dimen/dp_32"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ic_label_marked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sum_title"
+            android:layout_marginTop="@dimen/dp_20"
+            android:backgroundTint="@color/gray"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:src="@drawable/ic_achievment_blue_24" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_label_marked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sum_title"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_toEndOf="@+id/ic_label_marked"
+            android:layout_toRightOf="@+id/ic_label_marked"
+            android:text="Marked"
+            android:textColor="@color/material_500"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_topic_count_completed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_label_marked"
+            android:layout_marginHorizontal="10dp"
+            android:layout_toEndOf="@+id/ic_label_marked"
+            android:layout_toRightOf="@+id/ic_label_marked"
+            android:text="@{mark == null? `0/100` : mark+`/100` }"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+
+        <ProgressBar
+            android:id="@+id/progress_quiz_marked"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ic_label_marked"
+            android:layout_marginTop="10dp"
+            android:elevation="6dp"
+            android:progressDrawable="@drawable/custom_progress" />
+
+
+        <RelativeLayout
+            android:id="@+id/vg_sum_questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progress_quiz_marked"
+            android:layout_marginTop="@dimen/dp_50"
+            android:background="@drawable/custom_background_item_primary_enabled_1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:text="Questions: "
+                android:textColor="@color/material_500"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_sum_total_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/vg_sum_corrected_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vg_sum_questions"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/custom_background_item_primary_enabled_1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:text="Corrected: "
+                android:textColor="@color/material_500"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_sum_corrected_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/vg_sum_incorrect_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vg_sum_corrected_count"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/custom_background_item_primary_enabled_1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:text="Incorrect: "
+                android:textColor="@color/material_500"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_sum_incorrect_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_sum_mark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vg_sum_incorrect_count"
+            android:layout_marginTop="@dimen/dp_50"
+            android:gravity="center"
+            android:text="@{`Total: `+mark}"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_24"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sum_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_sum_mark"
+            android:layout_marginTop="@dimen/dp_40"
+            android:gravity="center"
+            android:textColor="@color/material_500"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            android:text="@{message}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sum_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/custom_button_enabled"
+            android:gravity="center"
+            android:minWidth="@dimen/btn_min_width"
+            android:text="EXIT"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+</layout>

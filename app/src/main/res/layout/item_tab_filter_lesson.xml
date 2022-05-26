@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="filter"
+            type="online.javalab.poly.model.lesson.FilterTabLesson" />
+    </data>
+
+    <TextView
+        android:layout_marginStart="@dimen/dp_5"
+        android:id="@+id/tv_tab_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_bg_tap_lesson_unselect"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:minWidth="@dimen/dp_70"
+        android:text="@{filter.title}"
+        tools:text="@string/text_btn_all_lesson"
+        android:textColor="@color/material_500"
+        android:textSize="@dimen/sp_12" />
+</layout>

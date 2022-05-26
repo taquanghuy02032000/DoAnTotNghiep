@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="gray">#E3E4F1</color>
+    <color name="sl_gray">#F1F2FA</color>
+    <color name="m_gray_10">#EDEDED</color>
+    <color name="m_gray_20">#E4E4E4</color>
+    <color name="m_gray_50">#D5D5D5</color>
+    <color name="m_gray_100">#ACACAC</color>
+    <color name="m_gray_200">#5F5F5F</color>
+    <color name="m_green_100">#2FDB5F</color>
+    <color name="material_500">#001A72</color>
+    <color name="gray_bottom">#ACACAC</color>
+    <color name="brand">#026E98</color>
+    <color name="brand2">#0188A6</color>
+    <color name="colorTextLight">#FAFAFA</color>
+    <color name="colorPrimary">#003AFF</color>
+    <color name="rainbow_1">#E7692C</color>
+    <color name="rainbow_2">#DE3032</color>
+    <color name="rainbow_3">#E03276</color>
+    <color name="rainbow_4">#E33AC9</color>
+    <color name="rainbow_5">#B638E2</color>
+    <color name="rainbow_6">#6F3EEF</color>
+    <color name="rainbow_7">#4369EE</color>
+    <color name="rainbow_8">#47A7E1</color>
+    <color name="rainbow_9">#26DEBD</color>
+    <color name="rainbow_10">#6FED48</color>
+
+
+    <array name="rainbow">
+        <item>@color/rainbow_1</item>
+        <item>@color/rainbow_2</item>
+        <item>@color/rainbow_3</item>
+        <item>@color/rainbow_4</item>
+        <item>@color/rainbow_5</item>
+        <item>@color/rainbow_6</item>
+        <item>@color/rainbow_7</item>
+        <item>@color/rainbow_8</item>
+        <item>@color/rainbow_9</item>
+        <item>@color/rainbow_10</item>
+
+    </array>
+</resources>

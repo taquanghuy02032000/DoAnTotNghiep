@@ -1,0 +1,100 @@
+{
+  "project_info": {
+    "project_number": "911052334583",
+    "project_id": "javalab-2e19c",
+    "storage_bucket": "javalab-2e19c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911052334583:android:4f198d7b72b36fd4173af2",
+        "android_client_info": {
+          "package_name": "com.example.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911052334583-pfvmh53khiab031kmr3vnp67fupiofg8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.auth",
+            "certificate_hash": "90194583197a9f2f017520280a15b1ce73208984"
+          }
+        },
+        {
+          "client_id": "911052334583-pmk2b4uccs1jjoilv43vc4fpmri3dut7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.auth",
+            "certificate_hash": "10ca415ef8080ae73183ab33232ba5498f5cb8ff"
+          }
+        },
+        {
+          "client_id": "911052334583-3o1kvpclk3odr8oennngd69165bjdquk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV6Rc1yGhSYHnTrY0u1rjIw-pnFiHw2iE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911052334583-3o1kvpclk3odr8oennngd69165bjdquk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911052334583:android:5b23f34d14df7bab173af2",
+        "android_client_info": {
+          "package_name": "online.javalab.poly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911052334583-9q6p7mh4mie25gsgs1hsp76v5s2qp4h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "online.javalab.poly",
+            "certificate_hash": "90194583197a9f2f017520280a15b1ce73208984"
+          }
+        },
+        {
+          "client_id": "911052334583-magcbac6saotjr801mebiggcin3p4agd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "online.javalab.poly",
+            "certificate_hash": "10ca415ef8080ae73183ab33232ba5498f5cb8ff"
+          }
+        },
+        {
+          "client_id": "911052334583-3o1kvpclk3odr8oennngd69165bjdquk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV6Rc1yGhSYHnTrY0u1rjIw-pnFiHw2iE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911052334583-3o1kvpclk3odr8oennngd69165bjdquk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

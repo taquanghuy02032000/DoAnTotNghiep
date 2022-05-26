@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JavaLabs</string>
+    <string name="editor_cut">Cut</string>
+    <string name="editor_copy">Copy</string>
+    <string name="editor_paste">Paste</string>
+    <string name="editor_comment">Comment</string>
+    <string name="editor_select_all">Select All</string>
+</resources>

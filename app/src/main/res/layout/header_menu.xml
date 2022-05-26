@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_320"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_gradient_blue"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:padding="@dimen/dp_32">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/header_menu_avt_circleimageview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_baseline_profile" />
+
+    <TextView
+        android:id="@+id/header_menu_name_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        tools:text="Jessica Shmitz"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/header_menu_email_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="purchasenow@gmail.com"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
+</LinearLayout>

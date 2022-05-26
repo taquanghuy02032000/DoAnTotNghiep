@@ -1,0 +1,4 @@
+rootProject.name = "JavaLab"
+include ':app'
+include ':compiler'
+include ':format-java'

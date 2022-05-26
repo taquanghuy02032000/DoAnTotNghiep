@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/nav_header"
+        layout="@layout/header_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp">
+
+        <ImageView
+            android:id="@+id/drawer_navigation_setting_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_setting" />
+
+        <TextView
+            android:id="@+id/drawer_navigation_setting_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seting"
+            android:textColor="@color/material_500"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp">
+
+        <ImageView
+            android:id="@+id/drawer_navigation_rateus_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/drawer_navigation_rateus_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rate us"
+            android:textColor="@color/material_500"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp">
+
+        <ImageView
+            android:id="@+id/drawer_navigation_contact_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_phone" />
+
+        <TextView
+            android:id="@+id/drawer_navigation_contact_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            android:textColor="@color/material_500"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp">
+
+        <ImageView
+            android:id="@+id/drawer_navigation_user_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_user" />
+
+        <TextView
+            android:id="@+id/drawer_navigation_user_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log out"
+            android:textColor="@color/material_500"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp">
+
+        <ImageView
+            android:id="@+id/drawer_navigation_more_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="30dp"
+            android:alpha="0.6"
+            android:background="@drawable/ic_more" />
+
+        <TextView
+            android:alpha="0.6"
+            android:id="@+id/drawer_navigation_more_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More course"
+            android:textColor="@color/material_500"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>

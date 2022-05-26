@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.lesson.TopicFragment">
+
+    <data>
+        <variable
+            name="topic"
+            type="online.javalab.poly.model.lesson.Topic" />
+        <variable
+            name="lesson"
+            type="online.javalab.poly.model.lesson.Lesson" />
+
+        <variable
+            name="complete"
+            type="Integer" />
+
+        <variable
+            name="marks"
+            type="Integer" />
+
+        <variable
+            name="quiz"
+            type="online.javalab.poly.model.lesson.Quiz" />
+
+        <variable
+            name="enableQuiz"
+            type="Boolean" />
+
+        <import type="android.view.View"/>
+    </data>
+<FrameLayout
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ic_label_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/gray"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:src="@drawable/ic_sand_clock_svg" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_label_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@+id/ic_label_completed"
+                android:text="@string/text_label_progress"
+                android:textColor="@color/material_500"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_topic_count_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_label_completed"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@+id/ic_label_completed"
+                android:text="@{complete+ `/`+lesson.totalTopic}"
+                android:textColor="@color/black"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_label_completed"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dp_2"
+                android:drawablePadding="@dimen/dp_2"
+                android:gravity="center_vertical"
+                android:text="@{lesson.progress!=null?`Started: `+lesson.progress.dateTime : `Started: ____/__/__`}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_11"
+                tools:text="____/__/__"
+                app:drawableStartCompat="@drawable/ic_clock_svg" />
+
+            <ProgressBar
+                android:id="@+id/progress_topic_complete_state"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ic_label_completed"
+                android:layout_marginTop="10dp"
+                android:elevation="6dp"
+                android:progressDrawable="@drawable/custom_progress"
+                app:completed="@{complete==null?0:complete}"
+                app:totalTopics="@{lesson.totalTopic}" />
+
+            <TextView
+                android:id="@+id/tv_label_topics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progress_topic_complete_state"
+                android:layout_marginTop="16dp"
+                android:text="@string/text_label_topic"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_label_topics"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/tv_label_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rcv_topic"
+                android:layout_marginTop="20dp"
+                android:text="@string/text_label_revise"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:id="@+id/vg_quiz_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_label_quiz"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_background_item_primary_enabled_1"
+                android:minHeight="100dp"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ic_label_quiz"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_exam_svg" />
+
+                <TextView
+                    android:id="@+id/tv_quiz_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_toStartOf="@+id/tv_quiz_state_marked"
+                    android:layout_toEndOf="@+id/ic_label_quiz"
+                    android:text="@{quiz.name}"
+                    android:textColor="@color/material_500"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_quiz_total_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_quiz_title"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_toEndOf="@+id/ic_label_quiz"
+                    android:text="@{`Questions: `+quiz.questions.size()}"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_quiz_state_marked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@{marks+`/100`}"
+                    android:textStyle="italic" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_start_quiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_below="@+id/ic_label_quiz"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/custom_button_disabled"
+                    android:enabled="@{lesson.progress!=null ? (lesson.progress.status==1? true : false)  : false }"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp_150"
+                    android:text="@{lesson.progress!=null ? (lesson.progress.quizStatus==1?`TRY AGAIN` : `START`)  : `START` }"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    tools:ignore="HardcodedText"
+                    tools:text="get started" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
+</layout>

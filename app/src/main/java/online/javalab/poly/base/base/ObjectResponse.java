@@ -1,0 +1,50 @@
+package online.javalab.poly.base.base;
+
+import androidx.annotation.NonNull;
+
+import io.reactivex.rxjava3.annotations.Nullable;
+import online.javalab.poly.utils.Define;
+
+
+public class ObjectResponse<T> extends BaseResponse {
+    private int type;
+
+    @Nullable
+    private T data;
+
+    @Nullable
+    private Throwable error;
+
+    public ObjectResponse() {
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public Throwable getError() {
+        return error;
+    }
+
+    private ObjectResponse(int status, T data, Throwable error) {
+        this.type = status;
+        this.data = data;
+        this.error = error;
+    }
+
+    public ObjectResponse<T> loading() {
+        return new ObjectResponse<>(Define.ResponseStatus.LOADING, null, null);
+    }
+
+    public ObjectResponse<T> success(@NonNull T data) {
+        return new ObjectResponse<>(Define.ResponseStatus.SUCCESS, data, null);
+    }
+
+    public ObjectResponse<T> error(@NonNull Throwable throwable) {
+        return new ObjectResponse<>(Define.ResponseStatus.ERROR, null, throwable);
+    }
+}

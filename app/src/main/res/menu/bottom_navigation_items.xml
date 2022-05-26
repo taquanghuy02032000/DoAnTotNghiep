@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home"
+        android:title="@string/fg_home"/>
+    <item android:id="@+id/nav_program"
+        android:icon="@drawable/ic_baseline_developer_mode"
+        android:title="@string/fg_program"/>
+    <item android:id="@+id/nav_rank"
+        android:icon="@drawable/ic_baseline_insights"
+        android:title="@string/fg_rank"/>
+    <item android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_baseline_profile"
+        android:title="@string/fg_profile"/>
+</menu>

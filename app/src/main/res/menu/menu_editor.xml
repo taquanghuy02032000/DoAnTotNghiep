@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_play"
+        android:icon="@drawable/ic_play"
+        android:title="@string/text_run"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_undo"
+        android:icon="@drawable/ic_undo"
+        android:title="@string/text_undo"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_redo"
+        android:icon="@drawable/ic_redo"
+        android:title="@string/text_redo"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_format"
+        android:icon="@drawable/ic_format"
+        android:title="@string/text_format"
+        app:showAsAction="ifRoom"/>
+</menu>

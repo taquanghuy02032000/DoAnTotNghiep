@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">JavaLab</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <!-- Title Fragment -->
+    <string name="fg_home">Home</string>
+    <string name="fg_program">Program</string>
+    <string name="fg_rank">Rank</string>
+    <string name="fg_profile">Profile</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="setting_label">Setting</string>
+
+    <string name="send_label">Send FAQ</string>
+    <string name="help_label">Help &amp; FAQ</string>
+    <string name="text_learn_online">Learn Online!</string>
+    <string name="text_slogan">Efficiently And Effectively</string>
+    <string name="text_start_now">Start Now</string>
+
+    <string name="text_run">Run</string>
+    <string name="text_undo">Undo</string>
+    <string name="text_redo">Redo</string>
+    <string name="text_format">Format</string>
+    <string name="text_input">Input</string>
+    <string name="title_compiler">Compiler</string>
+    <string name="logout">Logout?</string>
+
+    <string name="text_demo_lesson_title">What is Java ?</string>
+    <string name="text_label_progress">Progress</string>
+    <string name="text_label_complete">Complete</string>
+    <string name="text_hint_search_lesson">Search for lesson name…</string>
+
+    <!-- Login Screen -->
+    <string name="text_login_with_google">Login With Google</string>
+    <string name="text_let_s_start">Let\'s Start</string>
+    <string name="loading">Loading…</string>
+    <string name="login_failure">Login Failure</string>
+    <string name="google_play_services_error">Google Play Services Error!</string>
+    <string name="channel_name">JavaLab</string>
+    <string name="channel_description">channel description</string>
+    <string name="tittle_notifi">%s  ơi , đã đến giờ học bài rồi</string>
+    <string name="tittle_java">JavaLab %s</string>
+    <string name="channel_id">1</string>
+    <string name="conntent">Bổ xung kiến thức mới mỗi ngày, sẽ giúp bạn nâng cao trình độ bản thân</string>
+
+    <string name="text_day_streak">Day Streak</string>
+    <string name="text_achievements">Achievements</string>
+    <string name="three_space">_ _ _</string>
+    <string name="text_rank">Rank</string>
+    <string name="text_send">Send</string>
+    <string name="title">Title</string>
+    <string name="text_zero">0</string>
+    <string name="text_no_rank">No Rank</string>
+
+    <!--Toast content -->
+    <string name="toast_learn_topic_in_order">You have to learn the topics in order. \nPlease learn the topics above before starting this topic.</string>
+    <string name="text_label_discuss_chat">Discuss</string>
+
+    <string name="text_btn_all_lesson">All</string>
+    <string name="text_btn_learning_lesson">Learning</string>
+    <string name="text_btn_history_lesson">Done</string>
+    <string name="text_label_filter_lesson">Sort by: </string>
+    <string name="editor_log">Compile output log</string>
+
+    <string name="text_label_topic">Topics</string>
+    <string name="text_label_revise">Let\'s revise</string>
+</resources>

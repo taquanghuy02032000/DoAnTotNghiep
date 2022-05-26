@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="online.javalab.poly.fragments.lesson.CheckAnswerBottomSheetFragment" />
+
+        <variable
+            name="value"
+            type="String" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_sheet_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_background_bottom_sheet_answer_corrected"
+            android:fitsSystemWindows="true"
+            android:padding="@dimen/dp_16"
+            android:windowSoftInputMode="adjustPan|adjustResize">
+
+            <TextView
+                android:id="@+id/tv_bts_answer_result_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/m_green_100"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_send_qa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_feedback_gray_24"
+                app:layout_constraintEnd_toStartOf="@+id/ic_bts_discuss"
+                app:layout_constraintTop_toTopOf="@+id/ic_bts_discuss"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/ic_bts_discuss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_discuss_gray_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_sum_divider"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/custom_single_line_divider"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bts_answer_result_title" />
+
+            <TextView
+                android:id="@+id/tv_bts_correct_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@{value.trim().length()==0? ``: value}"
+                android:textColor="@color/material_500"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintTop_toBottomOf="@+id/v_sum_divider" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_bts_next"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_32"
+                android:background="@drawable/custom_button_enabled"
+                android:gravity="center"
+                android:minWidth="@dimen/btn_min_width"
+                android:text="NEXT"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bts_correct_answer" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/vg_chat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_150"
+                android:fitsSystemWindows="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_bts_next"
+                app:layout_constraintVertical_bias="0"
+                tools:layout_editor_absoluteX="16dp">
+
+                <RelativeLayout
+                    android:id="@+id/vg_chat_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/vg_chat_box"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/vg_chat_box"
+                    app:layout_constraintVertical_bias="0"
+                    android:paddingBottom="@dimen/dp_32"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_bts_label_discuss"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:layout_weight="8"
+                            android:text="@string/text_label_discuss_chat"
+                            android:textColor="@color/m_gray_200"
+                            android:textSize="@dimen/sp_18" />
+
+                        <ImageView
+                            android:id="@+id/ic_bts_discuss_dismiss"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="right"
+                            android:src="@drawable/ic_x_remove_gray_24"
+                            tools:ignore="RtlHardcoded" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/v_sum_divider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_below="@id/top"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:background="@drawable/custom_single_line_divider" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_sum_discuss"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/top"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="@dimen/dp_16"
+                        android:clipToPadding="false"
+                        android:paddingBottom="@dimen/dp_32"
+                        app:layout_constraintTop_toBottomOf="@+id/v_sum_divider2" />
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="@color/sl_gray"
+                    android:id="@+id/vg_chat_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingVertical="@dimen/dp_6">
+
+                    <EditText
+                        android:id="@+id/edt_Chat_box"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="@dimen/dp_6"
+                        android:background="@drawable/custom_background_item_primary_enabled_1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteX="0dp" />
+
+                    <ImageView
+                        android:id="@+id/ic_chat_send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/ic_send_24"
+                        app:layout_constraintBottom_toBottomOf="@id/edt_Chat_box"
+                        app:layout_constraintEnd_toEndOf="@+id/edt_Chat_box"
+                        app:layout_constraintTop_toTopOf="@+id/edt_Chat_box" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
